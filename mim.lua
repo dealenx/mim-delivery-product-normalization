@@ -1,10 +1,10 @@
-local tool = {}
+local mim = {}
 
-tool.guid = "3b1b6c07-71f4-497b-9eb9-163e9e3601f1"
-tool.name = "Нормализация товаров к поставке"
-tool.description = "Инструмент для нормализации данных о товарах и определения возможности поставки через маркетплейсы"
+mim.guid = "3b1b6c07-71f4-497b-9eb9-163e9e3601f1"
+mim.name = "Нормализация товаров к поставке"
+mim.description = "Инструмент для нормализации данных о товарах и определения возможности поставки через маркетплейсы"
 
-tool.columns = {
+mim.columns = {
     A = {
         label = "Наименование товара",
         description = "Краткое наименование товара (read-only)",
@@ -42,7 +42,7 @@ tool.columns = {
     }
 }
 
-tool.prompt = [[
+mim.prompt = [[
 <role>
 Ты - специалист по анализу товаров и маркетплейсам. Ты всегда пишешь по-русски, чтобы пользователь понимал, что ты делаешь.
 </role>
@@ -58,7 +58,7 @@ tool.prompt = [[
 
 </mcp_servers>
 
-<tools>
+<mims>
 <micmicai-mcp>
 -update_entry_fields(id, fields) - сохранить найденную цену в поле товара
 </micmicai-mcp>
@@ -70,7 +70,7 @@ tool.prompt = [[
 - browser_click(element, ref) - кликнуть по элементу
 - browser_wait_for(text/time) - ждать загрузки контента
 </playwright>
-</tools>
+</mims>
 
 <workflow>
 
@@ -269,4 +269,4 @@ tool.prompt = [[
   </expected_result>
 ]]
 
-return tool
+return mim
